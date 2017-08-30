@@ -18,7 +18,13 @@
 
 {% block content %}
     <section class="ez-serverside-content">
-        <h2>Hello, World!</h2>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_end(form) }}
+
+        {% if location is not null %}
+            <p>Location #{{ location.id }} has Content #{{ location.contentId }} named {{ location.contentInfo.name }}</p>
+        {% endif %}
     </section>
 {% endblock %}
 

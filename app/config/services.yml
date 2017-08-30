@@ -52,13 +52,15 @@ services:
               name: ezplatform.ui.link
               #order: 111
 
-    my_bundle.platformui.controller.my_form:
-        class: AppBundle\Controller\FormController
-        parent: ezsystems.platformui.controller.base
-
     # Step 4: Change controller to use a symfony form that takes int as input for "Location Id", and on submit shows
     # the name of the location
     # see <insert suitable doc link on forms and on using api, unless we assume people know it>
+
+    my_bundle.platformui.controller.my_form:
+        class: AppBundle\Controller\FormController
+        parent: ezsystems.platformui.controller.base
+        arguments:
+            - '@ezpublish.api.service.location'
 
 
     # Step 5: Change the form to use UDW
