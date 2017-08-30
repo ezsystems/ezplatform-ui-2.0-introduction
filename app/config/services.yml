@@ -25,6 +25,17 @@ services:
     # Step 2: Add Subtree Link to existing Zone, E.g add currently missing user (location id: 5) to admin zone
     # see doc from steps 1
 
+    my_bundle.platform_ui_navigationhub.link.contentstructure:
+        class: "%ezsystems.platformui.navigationhub.link.subtree.class%"
+        arguments:
+            - "@router"
+            - "Users"
+            - "admin"
+            - {locationId: 5}
+        tags:
+            -
+              name: ezplatform.ui.link
+              #order: 333
 
     # Step 3: Add Route Link to our custom "my_feature" zone, and a controller with hello world action
     # see doc from steps 1
