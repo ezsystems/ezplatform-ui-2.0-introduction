@@ -5,11 +5,39 @@ parameters:
 
 services:
 
-## Web Summer Camp: Add your tab(s) here
+## !! Web Summer Camp workshop: Add your services in the blocks below here !! :)
 
-    # Step 1: Add Hybrid UI Tab
+    # Step 1: Add Hybrid UI Zone
     # see https://github.com/ezsystems/hybrid-platform-ui/blob/master/docs/howto/add_navigation_hub_items.md
+    # NOTE: To verify it appears,  open url: /admin   ( PS: refresh screen after login, there is an alpha bug there ;) )
 
 
-    # Step 5: Add Hybrid UI support for existing 5.x/1.x FieldType
-    # see
+    # Step 2: Add Subtree Link to existing Zone, E.g add currently missing user (location id: 5) to admin zone
+    # see doc from steps 1
+
+
+    # Step 3: Add Route Link to our custom "my_feature" zone, and a controller with hello world action
+    # see doc from steps 1
+
+
+    # Step 4: Change controller to use a symfony form that takes int as input for "Location Id", and on submit shows
+    # the name of the location
+    # see <insert suitable doc link on forms and on using api, unless we assume people know it>
+
+
+    # Step 5: Change the form to use UDW
+    # see https://github.com/ezsystems/hybrid-platform-ui/blob/master/docs/howto/run_universal_discovery.md
+
+
+    # Step 6: Add confirmation for the action involving the locations
+    # see: https://github.com/ezsystems/hybrid-platform-ui/blob/master/docs/howto/add_confirm_dialog_in_a_form.md
+
+
+    # Step 7: Move the form above inside Tabs to prepare for more features
+    # see: https://github.com/ezsystems/hybrid-platform-ui/blob/master/docs/howto/render_tabs.md
+
+
+    # Step 8: Add Hybrid UI support for existing 1.x FieldType
+    # see ISBN PR: https://github.com/ezsystems/repository-forms/pull/141
+    # and add pattern regex to validate the format as an example
+    # NOTE: For editing open url using: /admin/content/create/draft/57/2
