@@ -10,7 +10,17 @@ services:
     # Step 1: Add Hybrid UI Zone
     # see https://github.com/ezsystems/hybrid-platform-ui/blob/master/docs/howto/add_navigation_hub_items.md
     # NOTE: To verify it appears,  open url: /admin   ( PS: refresh screen after login, there is an alpha bug there ;) )
-
+    my_bundle.platform_ui_navigationhub.zones.my_feature:
+        class: '%ezsystems.platformui.navigationhub.zone.class%'
+        arguments:
+            - "My feature"
+            - "my_feature"
+        tags:
+            -
+              name: ezplatform.ui.zone
+              # priority/order will be supported and documented once this PR is merged:
+              # https://github.com/ezsystems/hybrid-platform-ui/pull/92
+              #order: 555
 
     # Step 2: Add Subtree Link to existing Zone, E.g add currently missing user (location id: 5) to admin zone
     # see doc from steps 1
