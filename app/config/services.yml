@@ -1,0 +1,15 @@
+# Learn more about services, parameters and containers at
+# https://symfony.com/doc/current/service_container.html
+parameters:
+    #parameter_name: value
+
+services:
+
+## Web Summer Camp: Add your tab(s) here
+
+    # Step 1: Add Hybrid UI Tab
+    # see https://github.com/ezsystems/hybrid-platform-ui/blob/master/docs/howto/add_navigation_hub_items.md
+
+
+    # Step 5: Add Hybrid UI support for existing 5.x/1.x FieldType
+    # see
