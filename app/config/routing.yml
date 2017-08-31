@@ -32,3 +32,9 @@ fos_js_routing:
 
 ez_hybrid_ui:
     resource: "@EzSystemsHybridPlatformUiBundle/Resources/config/routing.yml"
+
+admin_my_form:
+    path: /my_form
+    defaults:
+        _controller: 'my_bundle.platformui.controller.my_form:formAction'
+    methods: [GET, POST]

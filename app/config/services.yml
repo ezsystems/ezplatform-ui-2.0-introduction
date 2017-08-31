@@ -40,6 +40,21 @@ services:
     # Step 3: Add Route Link to our custom "my_feature" zone, and a controller with hello world action
     # see doc from steps 1
 
+    my_bundle.platformui.navigationhub.link.admin.dashboard:
+        class: '%ezsystems.platformui.navigationhub.link.route.class%'
+        arguments:
+            - '@router'
+            - "admin_my_form"
+            - "My Form"
+            - "my_feature"
+        tags:
+            -
+              name: ezplatform.ui.link
+              #order: 111
+
+    my_bundle.platformui.controller.my_form:
+        class: AppBundle\Controller\FormController
+        parent: ezsystems.platformui.controller.base
 
     # Step 4: Change controller to use a symfony form that takes int as input for "Location Id", and on submit shows
     # the name of the location
