@@ -47,15 +47,31 @@
 {% endblock %}
 
 {% block content %}
-    <section class="ez-serverside-content">
-        {{ form_start(form) }}
-        {{ form_widget(form) }}
-        {{ form_end(form) }}
+    {% if location is not null %}
+        <p>Location #{{ location.id }} has Content #{{ location.contentId }} named {{ location.contentInfo.name }}</p>
+    {% else %}
+        <div class="ez-tabs">
+            <ul class="ez-tabs-list">
+                <li class="ez-tabs-label is-tab-selected"><a href="#tab1">Tab A</a></li>
+                <li class="ez-tabs-label"><a href="#tab2">Tab B</a></li>
+            </ul>
+            <div class="ez-tabs-panels">
+                <div class="ez-tabs-panel is-tab-selected" id="tab1">
+                    <section class="ez-serverside-content">
+                        {{ form_start(form) }}
+                        {{ form_widget(form) }}
+                        {{ form_end(form) }}
+                    </section>
+                </div>
+                <div class="ez-tabs-panel" id="tab2">
+                    Tab 2 content
+                </div>
+            </div>
+        </div>
+    {% endif %}
 
-        {% if location is not null %}
-            <p>Location #{{ location.id }} has Content #{{ location.contentId }} named {{ location.contentInfo.name }}</p>
-        {% endif %}
-    </section>
+
+
 {% endblock %}
 
 {% block title %}My form{% endblock %}
