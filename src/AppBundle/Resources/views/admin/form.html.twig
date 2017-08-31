@@ -26,6 +26,26 @@
             data-ud-confirm-fill-with="location.id">Select location</button>
 {% endblock %}
 
+<br>
+
+{% block _form_submit_widget %}
+    <button type="button" value="#confirm-impacting-operation" class="ez-js-open-modal ez-button">
+        Impacting operation
+    </button>
+
+    <dialog class="ez-modal" id="confirm-impacting-operation">
+        <section>
+            <p>Are you sure you want to do the impacting operation?</p>
+        </section>
+        <footer>
+            <button type="button" class="ez-js-close-modal ez-button">Cancel</button>
+            <button name="{{ form.vars.name }}" value="{{ form.vars.value }}" type="submit"  class="ez-js-close-modal ez-button ez-button-negative">
+                Impacting operation
+            </button>
+        </footer>
+    </dialog>
+{% endblock %}
+
 {% block content %}
     <section class="ez-serverside-content">
         {{ form_start(form) }}
