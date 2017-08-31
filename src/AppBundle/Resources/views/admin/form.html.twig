@@ -16,6 +16,16 @@
     <h1 class="ez-page-header-name" data-icon="&#xe925;">My form</h1>
 {% endblock %}
 
+{% form_theme form _self %}
+
+{% block _form_locationId_widget %}
+    <input type="hidden" value="" id="{{ form.vars.id }}" name="form[{{ form.vars.name }}]" />
+    <button type="button" class="ez-js-run-universal-discovery ez-button ez-button-primary"
+            data-ud-title="Pick a Content item"
+            data-ud-confirm-fill="#{{ form.vars.id }}"
+            data-ud-confirm-fill-with="location.id">Select location</button>
+{% endblock %}
+
 {% block content %}
     <section class="ez-serverside-content">
         {{ form_start(form) }}
