@@ -26,3 +26,19 @@ services:
             - { name: ezplatform.tab, group: dashboard-everyone }
             #- { name: ezplatform.tab, group: dashboard-my }
             #- { name: ezplatform.tab, group: location-view }
+
+    # Step 3: Add Field editing, using Symfony Forms
+
+    # Example from 2.0 here for now:
+    #
+    # Config:
+    # EzSystems\RepositoryForms\FieldType\Mapper\CheckboxFormMapper:
+    #   tags:
+    #     - { name: ez.fieldFormMapper.definition, fieldType: ezboolean }
+    #     - { name: ez.fieldFormMapper.value, fieldType: ezboolean }
+    #
+    # PHP Form handling:
+    #   https://github.com/ezsystems/repository-forms/blob/master/lib/FieldType/Mapper/CheckboxFormMapper.php
+    #
+    # Twig theming for admin ui:
+    #   https://github.com/ezsystems/ezplatform-admin-ui/blob/master/src/bundle/Resources/views/fieldtypes/ezboolean.html.twig
