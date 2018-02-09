@@ -26,15 +26,20 @@ class MyAdminUIMenuListener implements EventSubscriberInterface
 
         // Add own top level section
         $menu->addChild(
-            'menu_item_1',
-            ['label' => 'My Menu Item']
+            //aria-controls attribute
+            'my_menu_item',
+            [
+                'label' => 'My Menu Item',
+                'linkAttributes' => [
+                    'class' => 'test_class another_class',
+                    'data-property' => 'value',
+                ],
+            ]
         );
         $menu['menu_item_1']->addChild(
-            '2nd_level_menu_item',
+            //aria-controls attribute
+            '2nd_level_menu_item_link_to_ez_no',
             [
-                // Example of trnslating menu items
-                //'label' => 'translation.key',
-                //'translation_domain' => 'messages',
                 'label' => 'ez.no',
                 'uri' => 'http://ez.no',
             ]
@@ -42,19 +47,22 @@ class MyAdminUIMenuListener implements EventSubscriberInterface
 
         // Add sub section under content
         $menu[MainMenuBuilder::ITEM_CONTENT]->addChild(
-            'setup_node',
+            //aria-controls attribute
+            'setup_menu',
             [
-                'label' => 'Setup',
+                'label' => 'setup.translation.key',
                 'route' => '_ezpublishLocation',
                 'routeParameters' => ['locationId' => 48],
-                [
-                    // Example of configutng look on menu item
-                    'linkAttributes' => [
-                        'class' => 'test_class another_class',
-                        'data-property' => 'value',
-                    ],
+                'linkAttributes' => [
+                    'class' => 'test_class another_class',
+                    'data-property' => 'value',
+                ],
+                'extras' => [
+                    'translation_domain' => 'messages',
                 ],
             ]
         );
+        //output example after label translation:
+        //<a href="/admin/content/location/48" aria-controls="setup_menu" data-property="value" class="nav-link test_class another_class">Setup</a>
     }
 }
